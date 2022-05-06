@@ -1,0 +1,29 @@
+HDMI引脚编号        信号
+1        TMDS 日期 2+
+2        TMDS 数据 2 屏蔽
+3        TMDS 数据 2-
+4        TMDS 数据 1+
+5        TMDS 数据 1 屏蔽
+6        TMDS 数据 1-
+7        TMDS 数据 0+
+8        TMDS 数据 0 屏蔽
+9        TMDS 数据 0-
+10        TMDS时钟+
+11        TMDS 时钟屏蔽
+12        TMDS 时钟-
+13        中电
+14        HEC数据-
+15        SCL（DDC 串行时钟）
+16        SDA（DDC 串行数据线）
+17        DDC / CEC / HEC 地面
+18        +5 V 电源（最大 50 mA）
+19        热插拔检测 (1.3) / HEC 数据 + (1.4)
+
+将HDMI分支的SCL和SDA DDC线（分别为针脚15和16）连接到AVR上的I2C线（分别为ATmega48/88/168/328上的PC5和PC4），将HDMI端口连接到目标设备，然后为设备通电。它应该进入BootROM USB DFU模式，无需额外交互。
+
+说的很明白，
+模拟一个I2C总线刷机器，
+把CPU触发/导向 BootROM模式，
+也就是我们平时双USB公头刷机的ROM-Mask模式，，，
+
+站有个视频，用HDMI进入ttl，也挺有意思【教你用电视的HDMI接口进行TTL调试-哔哩哔哩】 https://b23.tv/wAwToPV
